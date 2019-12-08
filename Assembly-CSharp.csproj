@@ -64,8 +64,9 @@
     <Compile Include="Assets\Scripts\CamScript.cs" />
     <Compile Include="Assets\Scripts\CollisionScript.cs" />
     <Compile Include="Assets\Scripts\CubeScript.cs" />
-    <Compile Include="Assets\Scripts\EndTrigger.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\ObstacleScript.cs" />
+    <Compile Include="Assets\Scripts\ObstacleSpawn.cs" />
     <Compile Include="Assets\Scripts\Score.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>E:/UnityDemo/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

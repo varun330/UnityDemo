@@ -1,21 +1,18 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
 
-    bool gameHasEnded = false;
+    public bool gameHasEnded = false;
     public float restartDelay = 2f;
 
     public GameObject completeLevelUI;
+    public Text text;
     public GameObject gameOverUI;
     public CubeScript cube;
-
-    public void CompleteLevel()
-    {
-        Debug.Log("Level Won");
-        cube.enabled = false;
-        completeLevelUI.SetActive(true);
-    }
+    public ObstacleSpawn spawn;
+    public Score score;
 
     public void EndGame()
     {
@@ -24,8 +21,10 @@ public class GameManager : MonoBehaviour
             gameHasEnded = true;
             Debug.Log("Game Over");
             cube.enabled=false;
+            score.enabled = false;
+            spawn.CancelInvoke();
+            text.text="Score: " +score.score;
             gameOverUI.SetActive(true);
-            Invoke("restart",restartDelay);
             
         }
         

@@ -6,9 +6,10 @@ public class Score : MonoBehaviour
 
     public Transform cube;
     public Text text;
+    public int score=0;
     // Update is called once per frame
     void Update()
     {
-        text.text = "Score: " + cube.position.z.ToString("0"); 
+        text.text = "Score: " + score++; 
     }
 }
