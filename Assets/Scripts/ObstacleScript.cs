@@ -8,16 +8,19 @@ public class ObstacleScript : MonoBehaviour
     public float xPos;
     public float yPos;
     public float zPos;
+    GameManager gameManager;
 
     private void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         cube = GameObject.FindWithTag("Player").GetComponent<Rigidbody>(); ;
         self = GetComponent<Transform>();
         SpawnObject();
     }
     void Update()
     {
-        transform.Translate(0f, 0f, -.125f);
+        int factor = (gameManager.score.score / 1500)+1;
+        transform.Translate(0f, 0f, -10f*factor*Time.deltaTime);
         
         if (cube.position.z > transform.position.z+10)
             Destroy(gameObject);
